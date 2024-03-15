@@ -1,0 +1,169 @@
+.header__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.container__button:checked ~ .container__label > .header__menu-hamburguer{
+    background-image: url("../img/Menu\ Aberto.svg");
+}
+
+.container__button:checked~.container__label{
+    background: var(--gradient-blue);
+}
+
+.header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__img {
+    padding: 1em;
+}
+
+.menu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__button:checked~.menu-list {
+    display: block;
+}
+
+.menu-list__title, 
+.menu-list__item {
+    padding: 1em;
+    background-color: var(--white);
+}
+
+.menu-list__title {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.menu-list__link {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: uppercase;
+}
+
+.container__button {
+    display: none;
+}
+
+.container__title {
+    display: none;
+}
+
+.opitions{
+    display: none;
+}
+
+.container__texte {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container__title,
+    .container__title--negrito {
+        font-family: var(--secondary-font);
+        font-size: 30px;
+    }
+
+    .container__title {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__title--negrito{
+        font-weight: 700;
+    }
+
+    .opitions {
+        display: flex;
+    }
+
+    .options__items{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opitions__link {
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .container__img-transparent{
+        display: none;
+    }
+
+    .header__menu-hamburguer {
+        display: none;
+    }
+
+    .opitions__button:checked~.menu-list {
+        display: block;
+        width: auto;
+    }
+
+    .opitions__button {
+        display: none;
+    }
+
+    .opitions__button:checked~.opitions__label>.options__items{
+        background: var(--gradient-blue);
+        color: var(--white);
+    }
+
+    .options__items{
+        padding: 2em 1em;
+    }
+
+    .menu-list__item:hover{
+        background: var(--gradient-blue);
+    }
+
+    .menu-list__item:hover>.menu-list__link{
+        -webkit-text-fill-color: var(--white);
+        text-decoration: none;
+    }
+    
+}
+
+@media screen and (min-width: 1728px) {
+    
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .header{
+        padding: 0.2em;
+    }
+
+    .opitions{
+        margin-right: auto;
+    }
+
+    .container__texte {
+        display: block;
+    }
+}
